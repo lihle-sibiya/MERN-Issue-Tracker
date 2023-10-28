@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
-const { connectToDb } = require('./db.js');
-const { installHandler } = require('./api_handler.js');
-const auth = require('./auth.js');
+const { connectToDb } = require('./db');
+const { installHandler } = require('./api_handler');
+const auth = require('./auth');
 
 const app = express();
 
