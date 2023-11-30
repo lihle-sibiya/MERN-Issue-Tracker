@@ -65,7 +65,7 @@ class IssueAdd extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) {//receives submot event for add button 
     e.preventDefault();
     const form = document.forms.issueAdd;
     const issue = {
