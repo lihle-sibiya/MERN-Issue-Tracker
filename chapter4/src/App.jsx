@@ -98,7 +98,7 @@ class IssueList extends React.Component {
   }
 
   loadData() {
-    setTimeout(() => {
+    setTimeout(() => {//to make it asynchronous
       this.setState({ issues: initialIssues });
     }, 500);
   }
@@ -106,7 +106,7 @@ class IssueList extends React.Component {
   createIssue(issue) {
     issue.id = this.state.issues.length + 1;
     issue.created = new Date();
-    const newIssueList = this.state.issues.slice();
+    const newIssueList = this.state.issues.slice();//make a copy of the array
     newIssueList.push(issue);
     this.setState({ issues: newIssueList });
   }
