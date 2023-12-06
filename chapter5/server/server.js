@@ -37,12 +37,12 @@ const GraphQLDate = new GraphQLScalarType({
   },
 });
 
-const resolvers = {
-  Query: {
-    about: () => aboutMessage,
+const resolvers = { //resolve a query to a field with real values
+  Query: {//Query property/object
+    about: () => aboutMessage, //function returning about message
     issueList,
   },
-  Mutation: {
+  Mutation: {//Mutation property/object
     setAboutMessage,
     issueAdd,
   },
@@ -90,8 +90,8 @@ const server = new ApolloServer({
 const app = express();
 
 app.use(express.static('public'));
-
-server.applyMiddleware({ app, path: '/graphql' });
+//applyMiddleware takes in a configuration object as its argument that configures the server,
+server.applyMiddleware({ app, path: '/graphql' });//install the middleware in the Express application
 
 app.listen(3000, function () {
   console.log('App started on port 3000');
